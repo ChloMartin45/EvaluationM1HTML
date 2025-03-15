@@ -7,6 +7,58 @@ body, html {
     height: 100%;
 }
 
+#rooms header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-top: 10%;
+}
+
+.sous-titre2  {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+    margin-left: 5%;
+    text-align: left;
+    color:  rgb(108, 105, 105);
+    gap: 10px;
+}
+
+.sous-titre2::before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: rgb(193, 176, 134);
+}
+
+#rooms header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 20%;
+    margin-top: 10%;
+    color: white;
+    border: 3px solid white;
+    background-color: rgb(193, 176, 134);
+    width: 80px;
+    height: 30px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.room-title {
+    margin-left: 5%;
+    font-weight: normal;
+    font-family: 'Roboto Slab', serif;
+    color: rgb(44, 43, 43);
+    font-size: 18px;
+}
+
 .chambres {
     display: grid;
     grid-template-areas:
@@ -26,6 +78,7 @@ body, html {
     text-align: left;
     border-radius: 5%;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .chambres img {
