@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
 
-body {
-    margin: 0, auto;
+#accueil {
+    margin: 0 auto;
     background: url(images/home1.jpg) no-repeat fixed ;
     background-size: cover;
+    min-height: 100vh;
     padding: 10px;
 }
 
