@@ -173,23 +173,27 @@ h3 {
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* PARTIE AMENITIES */
+
 .background-con {
     position: relative;
+    width: 97%;
+    height: 30vh;
     margin: auto 0;
-    width: 100%;
     background: url('images/ami.jpg') no-repeat center center;
-    background-size: cover;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 20px;
-    border: 3px solid rgb(193, 176, 134);
+    border: 2px solid rgb(193, 176, 134);
 }
 
 .overlay-text {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 40%;
+    margin-bottom: 10%;
     background: rgba(63, 156, 193, 0.3); /* Fond transparent avec un peu de couleur */
     color: white;
     padding: 20px;
@@ -198,7 +202,7 @@ h3 {
     border: 3px solid rgb(193, 176, 134);
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
     transition: background 0.3s ease; /* Ajoute une transition fluide */
-    transform: translate(75vh, 40vh);
+    transform: translate(65vh, 30vh);
 }
 
 .overlay-text:hover {
@@ -207,12 +211,10 @@ h3 {
 
 .sous-titre4 {
     font-size: 20px;
-    font-family: 'Roboto Slab', serif;
     font-weight: normal;
 }
 
 .text-st {
-    font-family: 'Roboto Slab', serif;
     font-size: 12px;
     text-align: justify;
 }
@@ -220,19 +222,22 @@ h3 {
 .icon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    font-family: 'Roboto Slab', serif;
     font-size: 12px;
+}
+
+i {
+    margin-right: 10px;
 }
 
 .background-con a {
     display: flex;
-    transform: translate(70vh,80vh);
+    transform: translate(60vh,53vh);
     align-items: center;
     justify-content: center;
     text-decoration: none;
     margin-left: 5%;
+    margin-bottom: 10%;
     color: white;
-    font-family: 'Roboto Slab', serif;
     border: 3px solid white;
     background-color: rgb(193, 176, 134);
     width: 80px;
