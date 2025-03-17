@@ -31,13 +31,14 @@ body, html {
     display: flex;
     width: 40%;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .nav-links a {
     text-decoration: none;
     text-align: center;
     width: 60%;
-    cursor: pointer;
+
     color: white;
 }
 
@@ -90,17 +91,17 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 50%;
-    position: relative;
+    justify-content: center;
 }
 
 .image1 {
     width: 60%;
-    height: auto;
+    height: 20%;
+    object-fit: cover;
     margin-top: 30%;
     margin-left: -35%;
-    justify-content: center;
-    border: 3px solid rgb(193, 176, 134); /* Contour avec la couleur spécifiée */
-    border-radius: 10px; /* Coins arrondis */
+    border: 3px solid rgb(193, 176, 134);
+    border-radius: 10px;
     box-shadow: 8px 8px 15px black;
 }
 
@@ -110,9 +111,8 @@ body, html {
     margin-top: -25%;
     margin-left: 20%;
     margin-bottom: 25%;
-    justify-content: center;
-    border: 3px solid rgb(193, 176, 134); /* Contour avec la couleur spécifiée */
-    border-radius: 10px; /* Coins arrondis */
+    border: 3px solid rgb(193, 176, 134);
+    border-radius: 10px;
     box-shadow: 8px 8px 15px black;
 }
 
@@ -126,7 +126,7 @@ body, html {
     font-size: 12px;
     margin-left: 10%;
     text-align: left;
-    color:  rgb(51, 51, 51);
+    color: rgb(44, 43, 43);
     gap: 10px;
 }
 
@@ -138,7 +138,7 @@ body, html {
     background-color: rgb(193, 176, 134);
 }
 
-h3 {
+.about-text h3 {
     font-weight: 400;
     text-align: left;
     margin-left: 10%;
@@ -157,7 +157,7 @@ h3 {
     margin-bottom: 10%;
 }
 
-#about a {
+.about-text a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,16 +174,25 @@ h3 {
 }
 
 /* PARTIE AMENITIES */
+#amenities {
+    height: 100vh;
+    width: 100vw; /* Correction pour s'étendre sur toute la largeur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .background-con {
     position: relative;
     width: 97%;
-    height: 30vh;
-    margin: auto 0;
+    height: 40vh;
+    margin: auto;
     background: url('images/ami.jpg') no-repeat center center;
+    background-size: cover; /* Ajustement de l'image */
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between; /* Meilleure répartition */
     padding: 20px;
     border: 2px solid rgb(193, 176, 134);
 }
@@ -191,22 +200,24 @@ h3 {
 .overlay-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
     width: 40%;
-    margin-bottom: 10%;
-    background: rgba(63, 156, 193, 0.3); /* Fond transparent avec un peu de couleur */
+    max-width: 500px; /* Limite la taille */
+    height: auto; /* Évite une hauteur fixe inutile */
+    background: rgba(63, 156, 193, 0.3);
     color: white;
     padding: 20px;
-    padding-bottom: 5%;
     border-radius: 20px;
     border: 3px solid rgb(193, 176, 134);
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease; /* Ajoute une transition fluide */
-    transform: translate(65vh, 30vh);
+    transition: background-color 0.3s ease;
+    margin-top: 25%;
+    margin-left: 50%;
 }
 
 .overlay-text:hover {
-    background: rgba(63, 156, 193, 0.5); /* Fond plus opaque lors du survol */
+    background-color: rgba(63, 156, 193, 0.6);
 }
 
 .sous-titre4 {
@@ -222,6 +233,7 @@ h3 {
 .icon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     font-size: 12px;
 }
 
@@ -231,12 +243,10 @@ i {
 
 .background-con a {
     display: flex;
-    transform: translate(60vh,53vh);
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin-left: 5%;
-    margin-bottom: 10%;
+    margin-left: 2%;
     color: white;
     border: 3px solid white;
     background-color: rgb(193, 176, 134);
@@ -245,22 +255,30 @@ i {
     border-radius: 30px;
     padding: 10px 20px;
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 45%;
+    cursor: pointer;
+}
+
+/* PARTIE ROOMS */
+
+#rooms {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
 }
 
 #rooms header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 5%;
-    padding-top: 10%;
+    padding: 10px 5%;
 }
 
 .sous-titre2  {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto Slab', serif;
     font-size: 12px;
-    margin-left: 5%;
     text-align: left;
     color:  rgb(108, 105, 105);
     gap: 10px;
@@ -275,12 +293,10 @@ i {
 }
 
 #rooms header a {
-    display: flex;
+    display: flex;;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin-right: 20%;
-    margin-top: 10%;
     color: white;
     border: 3px solid white;
     background-color: rgb(193, 176, 134);
@@ -288,13 +304,13 @@ i {
     height: 30px;
     border-radius: 25px;
     padding: 10px 20px;
+    margin-right: 5%;
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
 .room-title {
     margin-left: 5%;
     font-weight: normal;
-    font-family: 'Roboto Slab', serif;
     color: rgb(44, 43, 43);
     font-size: 18px;
 }
@@ -336,126 +352,18 @@ i {
     font-size: 16px;
     padding-left: 15px;
     margin-bottom: 0%;
-    font-family: 'Roboto Slab', serif;
     font-weight: normal;
+    color: rgb(44, 43, 43)
 }
 
 .chambres p {
     font-size: 12px;
     padding-left: 15px;
-    font-family: 'Roboto Slab', serif;
     color: rgb(159, 152, 152);
 }
 
 .chambres span {
-    font-family: 'Roboto Slab', serif;
     font-size: 16px;
     color: rgb(36, 33, 33);
-    
-}
 
-#rooms header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 5%;
-    padding-top: 10%;
-}
-
-.sous-titre2  {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto Slab', serif;
-    font-size: 12px;
-    margin-left: 5%;
-    text-align: left;
-    color:  rgb(108, 105, 105);
-    gap: 10px;
-}
-
-.sous-titre2::before {
-    content: "";
-    display: block;
-    width: 75px;
-    height: 4px;
-    background-color: rgb(193, 176, 134);
-}
-
-#rooms header a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    margin-right: 20%;
-    margin-top: 10%;
-    color: white;
-    border: 3px solid white;
-    background-color: rgb(193, 176, 134);
-    width: 80px;
-    height: 30px;
-    border-radius: 25px;
-    padding: 10px 20px;
-    box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
-}
-
-.room-title {
-    margin-left: 5%;
-    font-weight: normal;
-    font-family: 'Roboto Slab', serif;
-    color: rgb(44, 43, 43);
-    font-size: 18px;
-}
-
-.chambres {
-    display: grid;
-    grid-template-areas:
-        "chambre1 chambre2 chambre3";
-    justify-content: center; 
-    gap: 20px;
-    width: 90%; 
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.chambres div {
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    border: 3px solid rgb(193, 176, 134); 
-    text-align: left;
-    border-radius: 5%;
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.chambres img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover; 
-    border-top-left-radius: 5%;  
-    border-top-right-radius: 5%; 
-    border-bottom-left-radius: 0;  
-    border-bottom-right-radius: 0;
-}
-
-.chambres h3 {
-    margin-top: 10px;
-    font-size: 16px;
-    padding-left: 15px;
-    margin-bottom: 0%;
-    font-family: 'Roboto Slab', serif;
-    font-weight: normal;
-}
-
-.chambres p {
-    font-size: 12px;
-    padding-left: 15px;
-    font-family: 'Roboto Slab', serif;
-    color: rgb(159, 152, 152);
-}
-
-.chambres span {
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
-    color: rgb(36, 33, 33);
 }
