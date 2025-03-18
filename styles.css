@@ -6,3 +6,112 @@ body, html {
     width: 100%;
     height: 100%;
 }
+
+#gallery {
+    height: 100vh;
+    width: 100vh;
+}
+
+.sous-titre5  {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+    margin-left: 10%;
+    text-align: left;
+    color:  rgb(51, 51, 51);
+    gap: 10px;
+}
+
+.sous-titre5::before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: rgb(193, 176, 134);
+}
+
+.header-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-gallery {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    font-weight: normal;
+    margin-left: 10%;
+}
+
+.header-gallery a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 10%;
+    color: white;
+    border: 3px solid white;
+    background-color: rgb(193, 176, 134);
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteneur de la galerie */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Espacement entre les images */
+    width: 90%;
+    margin: auto;
+    height: 60vh; /* Hauteur adaptée à l'écran */
+}
+
+/* Cacher les boutons radio */
+.gallery input {
+    display: none;
+}
+
+/* Style des labels (images) */
+.gallery-item {
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex-grow 0.5s ease-in-out;
+}
+
+.gallery-item-large {
+    width: 60%;
+    height: 40%;
+    overflow: hidden;
+}
+
+/* Style des images */
+.gallery-item img {
+    width: 10%;
+    height: 40%;
+    object-fit: cover; /* Garde un beau cadrage */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Quand une image est sélectionnée, elle devient grande */
+.gallery input:checked + .gallery-item {
+    flex-grow: 5; /* L'image sélectionnée prend plus de place */
+}
+
+/* Les images non sélectionnées deviennent petites */
+.gallery input:not(:checked) + .gallery-item {
+    flex: 1; /* Petites images */
+}
+
+/* Effet au survol */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
