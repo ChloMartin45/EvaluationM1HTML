@@ -6,12 +6,12 @@ body, html {
     width: 100%;
     height: 100%;
 }
-
 #gallery {
-    height: 100vh;
-    width: 100vh;
+    width: 100%;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
 }
-
 .sous-titre5  {
     display: flex;
     flex-direction: column;
@@ -34,15 +34,14 @@ body, html {
 .header-gallery {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
+    padding: 0 10%; 
 }
 
 .title-gallery {
-    display: flex;
-    width: 100%;
     font-size: 20px;
     font-weight: normal;
-    margin-left: 10%;
 }
 
 .header-gallery a {
@@ -50,7 +49,7 @@ body, html {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    margin-right: 10%;
+    margin-right: 20%;
     color: white;
     border: 3px solid white;
     background-color: rgb(193, 176, 134);
@@ -61,57 +60,60 @@ body, html {
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Conteneur de la galerie */
-.gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px; /* Espacement entre les images */
-    width: 90%;
-    margin: auto;
-    height: 60vh; /* Hauteur adaptée à l'écran */
-}
-
-/* Cacher les boutons radio */
-.gallery input {
+input[type="radio"] {
     display: none;
 }
 
-/* Style des labels (images) */
+.gallery-display {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+/* Style de base pour toutes les images */
 .gallery-item {
-    flex: 1;
-    height: 100%;
-    cursor: pointer;
+    height: auto;
+    border: 3px solid rgb(193, 176, 134);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
-    transition: flex-grow 0.5s ease-in-out;
+    object-fit: cover;
 }
 
-.gallery-item-large {
-    width: 60%;
-    height: 40%;
-    overflow: hidden;
-}
-
-/* Style des images */
 .gallery-item img {
-    width: 10%;
-    height: 40%;
-    object-fit: cover; /* Garde un beau cadrage */
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Quand une image est sélectionnée, elle devient grande */
-.gallery input:checked + .gallery-item {
-    flex-grow: 5; /* L'image sélectionnée prend plus de place */
+/* Lorsque l'un des inputs est sélectionné, l'image associée devient plus grande */
+#img1:checked ~ .gallery-display label[for="img1"],
+#img2:checked ~ .gallery-display label[for="img2"],
+#img3:checked ~ .gallery-display label[for="img3"],
+#img4:checked ~ .gallery-display label[for="img4"],
+#img5:checked ~ .gallery-display label[for="img5"],
+#img6:checked ~ .gallery-display label[for="img6"],
+#img7:checked ~ .gallery-display label[for="img7"],
+#img8:checked ~ .gallery-display label[for="img8"] {
+    flex: 10;
 }
 
-/* Les images non sélectionnées deviennent petites */
-.gallery input:not(:checked) + .gallery-item {
-    flex: 1; /* Petites images */
-}
+/* Les autres images deviennent plus petites */
+#img1:checked ~ .gallery-display label:not([for="img1"]),
+#img2:checked ~ .gallery-display label:not([for="img2"]),
+#img3:checked ~ .gallery-display label:not([for="img3"]),
+#img4:checked ~ .gallery-display label:not([for="img4"]),
+#img5:checked ~ .gallery-display label:not([for="img5"]),
+#img6:checked ~ .gallery-display label:not([for="img6"]),
+#img7:checked ~ .gallery-display label:not([for="img7"]),
+#img8:checked ~ .gallery-display label:not([for="img8"]) {
+    flex: 1;
+    filter: blur(1px);
 
-/* Effet au survol */
-.gallery-item:hover img {
-    transform: scale(1.05);
 }
