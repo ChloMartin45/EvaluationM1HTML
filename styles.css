@@ -463,6 +463,7 @@ i {
     overflow-x: auto;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10%;
 }
 .sous-titre5  {
     display: flex;
@@ -520,6 +521,7 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     width: 80%;
+    height: 600px;
     flex-grow: 1;
     margin-left: 10%;
     margin-top: 5%;
@@ -536,6 +538,7 @@ input[type="radio"] {
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     object-fit: cover;
+    margin-bottom: 10%;
 }
 
 .gallery-item img {
@@ -553,7 +556,7 @@ input[type="radio"] {
 #img6:checked ~ .gallery-display label[for="img6"],
 #img7:checked ~ .gallery-display label[for="img7"],
 #img8:checked ~ .gallery-display label[for="img8"] {
-    flex: 10;
+    width: 55%;
 }
 
 /* Les autres images deviennent plus petites */
@@ -565,7 +568,6 @@ input[type="radio"] {
 #img6:checked ~ .gallery-display label:not([for="img6"]),
 #img7:checked ~ .gallery-display label:not([for="img7"]),
 #img8:checked ~ .gallery-display label:not([for="img8"]) {
-    flex: 1;
+    width: 3%;
     filter: blur(1px);
-
 }
