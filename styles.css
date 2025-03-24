@@ -456,3 +456,116 @@ i {
     box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+}
+#gallery {
+    width: 100%;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.sous-titre5  {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+    margin-left: 10%;
+    text-align: left;
+    color:  rgb(51, 51, 51);
+    gap: 10px;
+}
+
+.sous-titre5::before {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    background-color: rgb(193, 176, 134);
+}
+
+.header-gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0 10%; 
+}
+
+.title-gallery {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.header-gallery a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 20%;
+    color: white;
+    border: 3px solid white;
+    background-color: rgb(193, 176, 134);
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.gallery-display {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+/* Style de base pour toutes les images */
+.gallery-item {
+    height: auto;
+    border: 3px solid rgb(193, 176, 134);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lorsque l'un des inputs est sélectionné, l'image associée devient plus grande */
+#img1:checked ~ .gallery-display label[for="img1"],
+#img2:checked ~ .gallery-display label[for="img2"],
+#img3:checked ~ .gallery-display label[for="img3"],
+#img4:checked ~ .gallery-display label[for="img4"],
+#img5:checked ~ .gallery-display label[for="img5"],
+#img6:checked ~ .gallery-display label[for="img6"],
+#img7:checked ~ .gallery-display label[for="img7"],
+#img8:checked ~ .gallery-display label[for="img8"] {
+    flex: 10;
+}
+
+/* Les autres images deviennent plus petites */
+#img1:checked ~ .gallery-display label:not([for="img1"]),
+#img2:checked ~ .gallery-display label:not([for="img2"]),
+#img3:checked ~ .gallery-display label:not([for="img3"]),
+#img4:checked ~ .gallery-display label:not([for="img4"]),
+#img5:checked ~ .gallery-display label:not([for="img5"]),
+#img6:checked ~ .gallery-display label:not([for="img6"]),
+#img7:checked ~ .gallery-display label:not([for="img7"]),
+#img8:checked ~ .gallery-display label:not([for="img8"]) {
+    flex: 1;
+    filter: blur(1px);
+
+}
