@@ -5,6 +5,8 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Roboto Slab', serif;
+    position: relative;
+    overflow: hidden;
 }
 
 /* SECTION ACCUEIL */
@@ -93,6 +95,14 @@ body, html {
     justify-content: center;
 }
 
+.image1:hover {
+    transform: scale(1.1);
+}
+
+.image2:hover {
+    transform: scale(1.1);
+}
+
 .image1 {
     width: 60%;
     height: 20%;
@@ -102,6 +112,7 @@ body, html {
     border: 3px solid rgb(193, 176, 134);
     border-radius: 10px;
     box-shadow: 8px 8px 15px black;
+    z-index: 0;
 }
 
 .image2 {
@@ -113,6 +124,7 @@ body, html {
     border: 3px solid rgb(193, 176, 134);
     border-radius: 10px;
     box-shadow: 8px 8px 15px black;
+    z-index: 1;
 }
 
 .about-text {
@@ -445,15 +457,60 @@ i {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
     gap: 15px;
-    width: 100%;
 }
 
-.restaurant-gallery img {
-    width: 100%;
-    object-fit: cover;
-    border: 4px solid rgb(193, 176, 134);
+/* Conteneur de chaque image */
+.resto-item {
+    position: relative;
+    overflow: hidden;
     border-radius: 25px;
-    box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgb(193, 176, 134);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+}
+
+/* Images */
+.resto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay : caché par défaut */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 2s ease-in-out;
+}
+
+/* Style du texte */
+.overlay h3, .overlay p {
+    color: white;
+    background-color: rgb(193, 176, 134,0.7);
+    padding: 5px;
+}
+
+.overlay h3 {
+    width: 100%;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.overlay p {
+    border-radius: 15px;
+    margin: 20px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.resto-item:hover .overlay {
+    bottom: 0; /* Fait remonter l'overlay */
 }
 
 /* PARTIE GALLERY*/
@@ -520,10 +577,10 @@ input[type="radio"] {
 .gallery-display {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     height: 600px;
     flex-grow: 1;
-    margin-left: 10%;
+    margin-right: 5%;
     margin-top: 5%;
 }
 
