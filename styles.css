@@ -592,7 +592,7 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     overflow: hidden;
     object-fit: cover;
     margin-bottom: 10%;
